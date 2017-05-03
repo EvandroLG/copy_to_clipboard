@@ -1,7 +1,7 @@
 # coding: utf-8
 
 Gem::Specification.new do |s|
-  s.name = 'cli_color_converter'
+  s.name = 'copy_to_clipboard'
   s.version = '0.0.1'
   s.date = '2016-05-03'
   s.summary = 'copy_to_clipboard'
@@ -11,6 +11,6 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/EvandroLG/copy_to_clipboard'
   s.license = 'MIT'
 
-  s.files = `git ls-files -z`.split("\x0")
-  s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  s.files = Dir["bin/copy_to_clipboard", "LICENSE", "README.md"]
+  s.executables = ['copy_to_clipboard']
 end
