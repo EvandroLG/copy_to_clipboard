@@ -7,7 +7,7 @@ end
 def red(text); colorize(text, 31); end
 def green(text); colorize(text, 32); end
 
-file_paht = ARGV[0]
+file_path = ARGV[0]
 
 abort(red('You should pass a file as parameter!')) if ARGV.empty?
 abort(red("File doesn't exist!")) unless File.exist?(file_path)
