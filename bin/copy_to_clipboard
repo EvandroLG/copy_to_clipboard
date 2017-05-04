@@ -13,6 +13,6 @@ abort(red('You should pass a file as parameter!')) if ARGV.empty?
 abort(red("File doesn't exist!")) unless File.exist?(file_path)
 
 file = File.open(file_path, 'rb')
-IO.popen("pbcopy", "w") { |pipe| pipe.puts file.read }
+IO.popen('pbcopy', 'w') { |pipe| pipe.puts file.read }
 
 puts green('Content copied! :)')
