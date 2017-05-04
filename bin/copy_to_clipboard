@@ -7,17 +7,12 @@ end
 def red(text); colorize(text, 31); end
 def green(text); colorize(text, 32); end
 
-if ARGV.empty?
-  puts red('You should pass a file as parameter!')
-  exit
-end
+file_paht = ARGV[0]
 
-unless File.exist? ARGV[0]
-  puts red("File doesn't exist!")
-  exit
-end
+abort(red('You should pass a file as parameter!')) if ARGV.empty?
+abort(red("File doesn't exist!")) unless File.exist?(file_path)
 
-file = File.open ARGV[0], 'rb'
+file = File.open(file_path, 'rb')
 IO.popen("pbcopy", "w") { |pipe| pipe.puts file.read }
 
 puts green('Content copied! :)')
